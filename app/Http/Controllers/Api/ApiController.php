@@ -5,7 +5,12 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\AbstractController;
 use Illuminate\Database\Eloquent\Model;
 
-class ApiController extends AbstractController
+abstract class ApiController extends AbstractController
 {
-    
+    protected $guard = 'api';
+
+    public function index()
+    {
+    	
+    }
 }

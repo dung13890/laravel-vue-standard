@@ -24,6 +24,7 @@
     "vue-resource": "^0.9.3",
     "vue-router": "^0.7.13",
     "vue-style-loader": "^1.0.0",
-    "vueify": "^8.7.0"
+    "vueify": "^8.7.0",
+    "vuetable": "^1.3.0"
   }
 }

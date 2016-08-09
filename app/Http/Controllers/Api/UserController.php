@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
+use App\Contracts\Repositories\UserRepository;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
-class UserController extends Controller
+class UserController extends ApiController
 {
-    //
+    protected $dataSelect = ['id','name','username','email','locked'];
+
+    public function __construct(UserRepository $user)
+    {
+        parent::__construct($user);
+    }
+
+    public function index()
+    {
+    	return $this->repository->paginate(1);
+    }
 }
