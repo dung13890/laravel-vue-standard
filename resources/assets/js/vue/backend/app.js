@@ -7,6 +7,16 @@ require('es6-promise').polyfill()
 Vue.use(VueRouter)
 Vue.use(VueResource)
 Vue.use(Progress)
+Vue.http.headers.common['X-CSRF-TOKEN'] = $('meta[name="csrf-token"]').attr('content')
+
+var transition = {
+  fade: {
+    afterEnter: function (el) {
+      this.$broadcast('fade:afterEnter', el)
+    }
+  }
+}
+Vue.transition('fade', transition.fade);
 
 const router = new VueRouter({
   history: true,
@@ -14,17 +24,11 @@ const router = new VueRouter({
   transitionOnLoad: true
 })
 
-Vue.http.interceptors.push({
-  request (request) {
-    this.$progress.start()
-    return request
-  },
-
-  response (response) {
-    this.$progress.finish()
-    return response
-  }
+router.beforeEach(function (transition) {
+  window.scrollTo(0, 0)
+  transition.next()
 })
+
 
 Routes.route(router)
 

@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use App\Contracts\Repositories\UserRepository;
-
-class UserController extends Controller
+class UserController extends BackendController
 {
     public function index()
     {
-    	dd(app(UserRepository::class)->all());
+    	$this->compacts['heading'] = 'product show';
+    	return $this->viewRender();;
     }
 }

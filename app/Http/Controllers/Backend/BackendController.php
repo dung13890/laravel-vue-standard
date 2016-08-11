@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\AbstractController;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
-class BackendController extends Controller
+class BackendController extends AbstractController
 {
-    //
+    protected $viewPrefix = 'backend.';
+
+	protected $view = 'home.index';
 }

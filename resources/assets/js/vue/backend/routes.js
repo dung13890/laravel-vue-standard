@@ -6,6 +6,10 @@ var routes = {
   'user': {
     name: 'user.index',
     component: require('./components/user/index.vue')
+  },
+  'user/create': {
+    name: 'user.create',
+    component: require('./components/user/create.vue')
   }
 } 
 

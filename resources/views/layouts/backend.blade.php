@@ -15,6 +15,9 @@
 <body class="skin-blue sidebar-mini">
     <div class="wrapper" id="app"></div>
 
+    <script>
+        var _token = '{{ csrf_token() }}';
+    </script>
     {{ HTML::script('vendor/jquery/jquery.min.js') }}
     {{ HTML::script('vendor/bootstrap/js/bootstrap.min.js') }}
     {{ HTML::script(elixir('assets/js/backend/app.js')) }}

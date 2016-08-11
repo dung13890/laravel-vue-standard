@@ -26,7 +26,8 @@ Route::group(['middlewareGroups' => ['web']], function () {
 
 	Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
 		Route::group(['prefix' => 'v1'], function () { 
-			Route::get('user', ['as'=>'api.user.index', 'uses'=>'UserController@index']);
+			//Route::get('user', ['as'=>'api.user.index', 'uses'=>'UserController@index']);
+			Route::resource('user', 'UserController');
 		});
 	});
 

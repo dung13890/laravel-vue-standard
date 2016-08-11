@@ -85,6 +85,21 @@
 			text-align:left !important;
 		}
 	}
+	.form-inline {
+		.form-control {
+			display: inline-block;
+    		width: auto;
+    		vertical-align: middle;
+		}
+	}
+}
+
+ul.dropdown-menu {
+	li {
+		span.checkbox {
+			padding: 0 20px;
+		}
+	}
 }
 
 .small-box {

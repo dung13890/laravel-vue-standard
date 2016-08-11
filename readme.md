@@ -1,4 +1,4 @@
-#Gara Operator System
+#Gara Operating System
 
 ## Required
  - Npm
